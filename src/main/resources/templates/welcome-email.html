@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Event Management System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .welcome-box {
+            background-color: #f0f4ff;
+            border-left: 4px solid #6c63ff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .features-container {
+            margin-bottom: 20px;
+        }
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f4ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 24px;
+            color: #6c63ff;
+        }
+        .feature-text h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .feature-text p {
+            margin: 0;
+            color: #666;
+        }
+        .cta-button {
+            display: block;
+            background-color: #6c63ff;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 30px auto;
+            width: 200px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 14px;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #6c63ff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Welcome to Event Management System</h1>
+    </div>
+
+    <div class="welcome-box">
+        <p>Hello <strong th:text="${userName}">User</strong>,</p>
+        <p>Thank you for joining Event Management System! We're excited to have you as part of our community.</p>
+    </div>
+
+    <h2>Here's what you can do with our platform:</h2>
+
+    <div class="features-container">
+        <div class="feature">
+            <div class="feature-icon">📅</div>
+            <div class="feature-text">
+                <h3>Discover Events</h3>
+                <p>Find amazing events happening around you based on your interests.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🎟️</div>
+            <div class="feature-text">
+                <h3>Book Tickets</h3>
+                <p>Easily book tickets for events with secure payment options.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <div class="feature-text">
+                <h3>Manage Bookings</h3>
+                <p>View and manage all your bookings in one place.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🌟</div>
+            <div class="feature-text">
+                <h3>Rate & Review</h3>
+                <p>Share your experience by rating and reviewing events you've attended.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="http://localhost:8080/eventms" class="cta-button">Explore Events Now</a>
+
+    <p>If you have any questions or need assistance, feel free to contact our support team at <a href="mailto:support@eventms.com">support@eventms.com</a>.</p>
+
+    <div class="footer">
+        <p>Thank you for choosing Event Management System!</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2023 Event Management System. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>

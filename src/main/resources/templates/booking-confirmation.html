@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #6c63ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .confirmation-box {
+            background-color: #e9f9e9;
+            border-left: 4px solid #2ecc71;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .booking-details {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qr-code img {
+            max-width: 200px;
+            height: auto;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #6c63ff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Booking Confirmation</h1>
+    </div>
+
+    <div class="confirmation-box">
+        <p>Hello <strong th:text="${userName}">User</strong>,</p>
+        <p>Your booking for <strong th:text="${eventTitle}">Event Name</strong> has been confirmed! Thank you for using our service.</p>
+    </div>
+
+    <div class="booking-details">
+        <h2>Booking Information</h2>
+        <table>
+            <tr>
+                <th>Booking Reference:</th>
+                <td th:text="${bookingNumber}">BK12345678</td>
+            </tr>
+            <tr>
+                <th>Event:</th>
+                <td th:text="${eventTitle}">Event Name</td>
+            </tr>
+            <tr>
+                <th>Date & Time:</th>
+                <td th:text="${eventDate}">January 1, 2023, 10:00 AM</td>
+            </tr>
+            <tr>
+                <th>Venue:</th>
+                <td th:text="${venue}">Event Venue</td>
+            </tr>
+            <tr>
+                <th>Number of Tickets:</th>
+                <td th:text="${ticketCount}">2</td>
+            </tr>
+            <tr>
+                <th>Total Amount:</th>
+                <td th:text="${totalAmount}">$100.00</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="qr-code">
+        <h3>Your E-Ticket</h3>
+        <p>Present this QR code at the venue for entry</p>
+        <img th:src="'cid:qrCode'" alt="QR Code Ticket" width="200" height="200">
+    </div>
+
+    <p style="text-align: center;">
+        <a th:href="@{'http://localhost:8080/eventms/bookings/' + ${bookingNumber}}" class="btn">View Booking Details</a>
+    </p>
+
+    <div class="footer">
+        <p>If you have any questions, please contact us at support@eventms.com</p>
+        <p>&copy; 2023 Event Management System. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
